@@ -1,14 +1,5 @@
-let cellContainer = document.createElement("div");
-cellContainer.setAttribute("id", "cellContainer");
-
-
-let overallContainer = document.getElementById("overallContainer");
-overallContainer.appendChild(cellContainer);
-
-
 function modContainer(row, col){
 	gridRowsString = [];
-	// cellContainer = document.getElementById("cellContainer");
 	for(i = 0; i < row; i++){
 		gridRowsString.push("auto");
 	}
@@ -42,12 +33,32 @@ function createContainer(){
 }
 
 function removeContainer(){
-	//overallContainer.removeChild(overallContainer.childNodes[0])
 	overallContainer.removeChild(cellContainer);
 }
 
+let cellContainer = document.createElement("div");
+cellContainer.setAttribute("id", "cellContainer");
 
+let overallContainer = document.getElementById("overallContainer");
+overallContainer.appendChild(cellContainer);
 
+let isRainbowColors = false;
+
+//Button Stuff
+let resetButton = document.getElementById("resetButton");
+resetButton.addEventListener("click", function(e){
+	let rows = Number(prompt("How big should the grid be?"));
+	if(!Number.isInteger(rows) || rows < 1 || rows > 64){
+		window.alert("Please Enter a Valid Number between 1 and 64");
+		return;
+	}
+	removeContainer();
+	createContainer(rows, rows);
+	modContainer(rows, rows);
+	createCells(rows, rows);
+})
+
+//Initial Grid
 let row = 16;
 let col = 16;
 let gridRowsString = [];
