@@ -54,16 +54,19 @@ table {
   height: 100%;
 }
 
-#divContainer{
+#cellContainer{
   width: 800px;
   height: 800px;
   background-color: orange;
   margin: 0 auto;
   display: grid;
-  grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
-  grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
+ 
   grid-column-gap: 3px;
-  grid-row-gap: 4px;
+  grid-row-gap: 3px;
+}
+
+.unhovered{
+  background-color: yellow;
 }
 
 .hovered{

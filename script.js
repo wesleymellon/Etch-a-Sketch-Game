@@ -1,26 +1,23 @@
-let container = document.createElement("div");
-container.setAttribute("id", "divContainer");
+let cellContainer = document.createElement("div");
+cellContainer.setAttribute("id", "cellContainer");
 
 
+let overallContainer = document.getElementById("overallContainer");
+overallContainer.appendChild(cellContainer);
 
-// for(i = 0; i < 16; i++){
-// 	for(j = 0; j < 16; j++){
-// 		let div = document.createElement("div");
-// 		div.classList.add("unhovered");
-// 		div.classList.add("cell");
-// 		div.addEventListener("mouseover", function(e){
-// 			div.classList.add("hovered");
-// 			div.classList.remove("unhovered");
-// 		})
-// 		container.appendChild(div);
-// 	}
-// }
 
-let row = 16;
-let col = 16;
-createDivs(row, col);
+function modContainer(row, col){
+	gridRowsString = [];
+	// cellContainer = document.getElementById("cellContainer");
+	for(i = 0; i < row; i++){
+		gridRowsString.push("auto");
+	}
+	gridRowsString = gridRowsString.join(" ");
+	cellContainer.style.gridTemplateRows = gridRowsString;
+	cellContainer.style.gridTemplateColumns = gridRowsString;
+}
 
-function createDivs(row, col){
+function createCells(row, col){
 	for(i = 0; i < row; i++){
 		for(j = 0; j < col; j++){
 			let div = document.createElement("div");
@@ -30,28 +27,33 @@ function createDivs(row, col){
 				div.classList.add("hovered");
 				div.classList.remove("unhovered");
 			})
-			container.appendChild(div);
+			cellContainer = document.getElementById("cellContainer");
+			cellContainer.appendChild(div);
 
 		}
 
 	}
 }
 
+function createContainer(){
+	cellContainer = document.createElement("div");
+	cellContainer.setAttribute("id", "cellContainer");
+	overallContainer.appendChild(cellContainer);
+}
 
-//const cells = Array.from(container.querySelectorAll(".unhovered"));
-let gridRows = 16;
-let gridColumns = 16;
+function removeContainer(){
+	//overallContainer.removeChild(overallContainer.childNodes[0])
+	overallContainer.removeChild(cellContainer);
+}
+
+
+
+let row = 16;
+let col = 16;
 let gridRowsString = [];
 
-for(i = 0; i < gridRows; i++){
-	gridRowsString.push("auto");
-}
-gridRowsString = gridRowsString.join(" ");
+modContainer(row, col);
+createCells(row, col);
 
-container.style.gridTemplateRows = gridRowsString;
-container.style.gridTemplateColumns = gridRowsString;
 
-//You have to create more divs when the user changes up the number of divs. To do this make i and j variables and eventually have them be determined by a form or input field? Probably just make the for loop into a functin. In fact, we can make like three helper functions so far. 
 
-let overallContainer = document.getElementById("overallContainer");
-overallContainer.appendChild(container);
