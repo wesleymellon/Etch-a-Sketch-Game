@@ -65,16 +65,9 @@ table {
   grid-row-gap: 3px;
 }
 
-.unhovered{
-  background-color: yellow;
-}
-
-.hovered{
-  background-color: black;
-}
-
 .cell{
   border-radius: 10%;
+  background-color: yellow;
 }
 
 
