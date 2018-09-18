@@ -8,23 +8,6 @@ function modContainer(row, col){
 	cellContainer.style.gridTemplateColumns = gridRowsString;
 }
 
-// function createCells(row, col){
-// 	for(i = 0; i < row; i++){
-// 		for(j = 0; j < col; j++){
-// 			let div = document.createElement("div");
-// 			div.classList.add("unhovered");
-// 			div.classList.add("cell");
-// 			div.addEventListener("mouseover", function(e){
-// 				div.classList.add("hovered");
-// 				div.classList.remove("unhovered");
-// 			})
-// 			cellContainer.appendChild(div);
-
-// 		}
-
-// 	}
-// }
-
 function createCells(row, col){
 	for(i = 0; i < row; i++){
 		for(j = 0; j < col; j++){
@@ -116,7 +99,3 @@ let gridRowsString = [];
 modContainer(row, col);
 createCells(row, col);
 
-
-
-//For some reason when we make the cells variable global, our rainbow function doesn't work anymore? Lines 76 and 99
-//Need to make the event listener functions on the cells not anonymous functions bc we can't remove anonymous functions. Also remember to take off the classes hovered and unhovered

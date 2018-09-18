@@ -49,6 +49,23 @@ table {
 
 /* Original Code */
 
+body{
+  font-family: 'Noto Serif KR', sans-serif;
+  background-color: grey;
+}
+
+h1{
+  text-align: center;
+  font-size: 36px;
+  margin: 10px;
+}
+
+#buttonHolder{
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
 #overallContainer{
   width: 100%;
   height: 100%;
@@ -57,17 +74,17 @@ table {
 #cellContainer{
   width: 800px;
   height: 800px;
-  background-color: orange;
+  background-color: grey;
   margin: 0 auto;
   display: grid;
  
-  grid-column-gap: 3px;
-  grid-row-gap: 3px;
+  grid-column-gap: 2px;
+  grid-row-gap: 2px;
 }
 
 .cell{
   border-radius: 10%;
-  background-color: yellow;
+  background-color: white;
 }
 
 
